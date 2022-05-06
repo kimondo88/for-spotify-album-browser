@@ -2,6 +2,8 @@
   "name": "for-spotify-album-browser",
   "version": "0.1.0",
   "private": true,
+  "main": "src/Electron-starter.js",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
@@ -12,10 +14,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start & npm run electron",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "all" : "npm-run-all --parallel start electron-dev"
   },
   "eslintConfig": {
     "extends": [
@@ -36,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "electron": "^18.2.0"
+    "electron": "^18.2.0",
+    "npm-run-all": "^4.1.5"
   }
 }

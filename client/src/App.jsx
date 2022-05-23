@@ -2,6 +2,9 @@ import logo from './Spotify_Logo.png';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login.jsx';
+import Dashboard from './Dashboard';
+
+const code = new URLSearchParams(window.location.search).get('code');
 
 function App() {
   return (
@@ -9,7 +12,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-        <Login/>
+        {code ? <Dashboard code={code}/> : <Login/>}
     </div>
   );
 }
